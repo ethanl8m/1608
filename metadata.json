@@ -1,0 +1,6 @@
+{
+  "name": "CentraOps - Executive Problem & Operations Command",
+  "description": "Centralized executive management system to track, resolve, and report on Invoicing, Accounts Receivable, Regulations, Customer Service, and Manpower Leave.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
