@@ -241,7 +241,7 @@ export default function App() {
   const unresolvedProblemsCount = problems.filter((p) => p.status !== 'resolved').length;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans">
+    <div className="min-h-screen flex flex-col bg-[#fefdf8] text-amber-950 font-sans">
       {/* Universal Top Nav */}
       <TopNav
         activeTab={activeTab}
@@ -320,17 +320,17 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white py-6 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <footer className="border-t border-amber-200/80 bg-[#fffdfa] py-6 mt-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-amber-800">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-800">CentraOps</span>
+            <span className="font-bold text-amber-950">CentraOps</span>
             <span>·</span>
-            <span>Centralized Executive Problem & Operations Management System</span>
+            <span>Executive Problem & Operations Management System</span>
           </div>
-          <div className="flex items-center gap-4 text-slate-500">
+          <div className="flex items-center gap-4 text-amber-700">
             <span>5 Problems Tracked</span>
             <span>·</span>
-            <span>AI Executive Briefing Engine</span>
+            <span>Golden Blossom AI Briefing Engine</span>
             <span>·</span>
             <span>Confidential & Internal</span>
           </div>

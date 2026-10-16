@@ -148,20 +148,20 @@ export const CustomerServiceDesk: React.FC<CustomerServiceDeskProps> = ({
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Whiteboard Focus 4: Customer Service - Reply Email + Tracking
           </div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-amber-950">
             Customer Service Email & Ticket Desk
           </h2>
-          <p className="text-sm text-slate-600 mt-0.5">
+          <p className="text-sm text-amber-900/80 mt-0.5">
             Omnichannel customer inquiry tracking, strict SLA counters, and AI contextual email reply assistance.
           </p>
         </div>
 
         <button
           onClick={() => setIsNewTicketOpen(true)}
-          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors shadow-sm cursor-pointer shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-amber-950 bg-amber-400 hover:bg-amber-300 rounded-xl border border-amber-500/50 transition-colors shadow-sm cursor-pointer shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Log Customer Inquiry</span>
@@ -170,34 +170,34 @@ export const CustomerServiceDesk: React.FC<CustomerServiceDeskProps> = ({
 
       {/* KPI row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Active Open Inquiries
           </div>
-          <div className="text-2xl font-bold font-mono tabular-nums text-slate-900">
+          <div className="text-2xl font-bold font-mono tabular-nums text-amber-950">
             {openCount} Tickets
           </div>
-          <div className="text-xs text-slate-500 mt-1">Requiring team response</div>
+          <div className="text-xs text-amber-800/80 mt-1">Requiring team response</div>
         </div>
 
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-rose-700 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">
             Urgent SLA Watch
           </div>
           <div className="text-2xl font-bold font-mono tabular-nums text-rose-700">
             {urgentCount} Critical
           </div>
-          <div className="text-xs text-slate-500 mt-1">&lt;2 hours before contractual breach</div>
+          <div className="text-xs text-amber-800/80 mt-1">&lt;2 hours before contractual breach</div>
         </div>
 
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Resolved This Week
           </div>
           <div className="text-2xl font-bold font-mono tabular-nums text-emerald-700">
             {tickets.filter((t) => t.status === 'resolved').length} Settled
           </div>
-          <div className="text-xs text-slate-500 mt-1">Average resolution time: 3.4 hrs</div>
+          <div className="text-xs text-amber-800/80 mt-1">Average resolution time: 3.4 hrs</div>
         </div>
       </div>
 

@@ -87,48 +87,48 @@ export const RegulationsHub: React.FC<RegulationsHubProps> = ({
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Whiteboard Focus 3: Understand Regulations
           </div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-amber-950">
             Regulatory Intelligence & Compliance Tracker
           </h2>
-          <p className="text-sm text-slate-600 mt-0.5">
+          <p className="text-sm text-amber-900/80 mt-0.5">
             Demystify corporate law, tax filing deadlines, labor standards, and data protection rules into plain English.
           </p>
         </div>
       </div>
 
-      {/* AI Regulation Advisor & Plain-English Explainer */}
-      <div className="bg-slate-900 text-white rounded-xl p-6 border border-slate-800 space-y-4">
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400">
-          <Sparkles className="w-4 h-4" />
+      {/* AI Regulation Advisor & Plain-English Explainer in warm golden amber container */}
+      <div className="bg-[#78350f] text-white rounded-2xl p-6 sm:p-8 border border-amber-600/40 space-y-4 shadow-sm">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-300">
+          <Sparkles className="w-4 h-4 text-amber-400" />
           <span>Interactive Plain-English Regulatory Advisor</span>
         </div>
-        <h3 className="text-lg font-bold tracking-tight text-white">
+        <h3 className="text-xl font-bold tracking-tight text-white">
           Ask any statutory regulation question or paste complex legal text
         </h3>
-        <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
-          Gemini extracts the actionable requirements, key statutory deadlines, penalties for non-compliance, and generates a concrete step-by-step audit checklist.
+        <p className="text-xs text-amber-100/80 max-w-2xl leading-relaxed">
+          Gemini extracts actionable requirements, key statutory deadlines, penalties for non-compliance, and generates a concrete step-by-step audit checklist.
         </p>
 
         {/* Search / Query Bar */}
         <div className="flex flex-col sm:flex-row gap-2 pt-1">
           <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
+            <Search className="absolute left-3.5 top-3 w-4 h-4 text-amber-300" />
             <input
               type="text"
               placeholder="e.g. When is corporate annual tax return due, and what are the penalties for late filing?"
               value={queryInput}
               onChange={(e) => setQueryInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleAskRegulation()}
-              className="w-full pl-10 pr-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              className="w-full pl-10 pr-4 py-2.5 bg-amber-950/60 border border-amber-500/50 rounded-xl text-xs text-white placeholder-amber-200/50 focus:outline-none focus:ring-2 focus:ring-amber-400"
             />
           </div>
           <button
             onClick={() => handleAskRegulation()}
             disabled={isAnalyzing || !queryInput.trim()}
-            className="px-5 py-2.5 text-xs font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors cursor-pointer shrink-0 disabled:opacity-50"
+            className="px-5 py-2.5 text-xs font-bold text-amber-950 bg-amber-400 hover:bg-amber-300 rounded-xl transition-colors cursor-pointer shrink-0 disabled:opacity-50 shadow-sm"
           >
             {isAnalyzing ? 'Analyzing Law...' : 'Explain Regulation'}
           </button>

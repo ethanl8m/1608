@@ -161,20 +161,20 @@ export const InvoicesManager: React.FC<InvoicesManagerProps> = ({
       {/* Header and KPI strip */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
-            Whiteboard Focus 1: Issue Invoices
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1 flex items-center gap-1.5">
+            <span>Whiteboard Focus 1: Issue Invoices</span>
           </div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-amber-950">
             Invoicing & Billing Pipeline
           </h2>
-          <p className="text-sm text-slate-600 mt-0.5">
+          <p className="text-sm text-amber-900/80 mt-0.5">
             Create, issue, and manage client billings with automated line-item estimation and status tracking.
           </p>
         </div>
 
         <button
           onClick={() => setIsCreateModalOpen(true)}
-          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors shadow-sm cursor-pointer shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-amber-950 bg-amber-400 hover:bg-amber-300 rounded-xl border border-amber-500/50 transition-colors shadow-sm cursor-pointer shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Create & Issue Invoice</span>
@@ -183,45 +183,45 @@ export const InvoicesManager: React.FC<InvoicesManagerProps> = ({
 
       {/* Metrics Strip */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Total Invoiced (Active/Issued)
           </div>
-          <div className="text-2xl font-bold font-mono tabular-nums text-slate-900">
+          <div className="text-2xl font-bold font-mono tabular-nums text-amber-950">
             ${totalBilled.toLocaleString()}
           </div>
-          <div className="text-xs text-slate-500 mt-1">
+          <div className="text-xs text-amber-800/80 mt-1">
             Across {invoices.filter((i) => i.status !== 'draft').length} issued accounts
           </div>
         </div>
 
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Drafts Pending Issuance
           </div>
-          <div className="text-2xl font-bold font-mono tabular-nums text-amber-700">
+          <div className="text-2xl font-bold font-mono tabular-nums text-amber-800">
             ${draftValue.toLocaleString()}
           </div>
-          <div className="text-xs text-slate-500 mt-1">
+          <div className="text-xs text-amber-800/80 mt-1">
             {invoices.filter((i) => i.status === 'draft').length} invoices ready for review
           </div>
         </div>
 
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">
             Overdue Balance
           </div>
           <div className="text-2xl font-bold font-mono tabular-nums text-rose-700">
             ${overdueValue.toLocaleString()}
           </div>
-          <div className="text-xs text-slate-500 mt-1">
+          <div className="text-xs text-amber-800/80 mt-1">
             {invoices.filter((i) => i.status === 'overdue').length} past-due invoices
           </div>
         </div>
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex items-center gap-1 p-1 bg-slate-100 rounded-lg w-fit text-xs font-medium">
+      <div className="flex items-center gap-1 p-1 bg-amber-100/70 rounded-lg w-fit text-xs font-medium">
         {[
           { id: 'all', label: 'All Invoices' },
           { id: 'draft', label: 'Drafts' },
@@ -234,8 +234,8 @@ export const InvoicesManager: React.FC<InvoicesManagerProps> = ({
             onClick={() => setActiveFilter(tab.id as any)}
             className={`px-3 py-1.5 rounded-md transition-colors cursor-pointer ${
               activeFilter === tab.id
-                ? 'bg-white text-slate-900 shadow-xs font-semibold'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-amber-400 text-amber-950 font-bold shadow-xs'
+                : 'text-amber-900 hover:text-amber-950'
             }`}
           >
             {tab.label}

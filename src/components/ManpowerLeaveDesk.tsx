@@ -90,20 +90,20 @@ export const ManpowerLeaveDesk: React.FC<ManpowerLeaveDeskProps> = ({
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Whiteboard Focus 5: Manpower Leave Management
           </div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-amber-950">
             Manpower Roster & Team Leave Coverage
           </h2>
-          <p className="text-sm text-slate-600 mt-0.5">
+          <p className="text-sm text-amber-900/80 mt-0.5">
             Coordinate employee leave requests, manage entitlement balances, and prevent department coverage bottlenecks.
           </p>
         </div>
 
         <button
           onClick={() => setIsSubmitModalOpen(true)}
-          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors shadow-sm cursor-pointer shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-amber-950 bg-amber-400 hover:bg-amber-300 rounded-xl border border-amber-500/50 transition-colors shadow-sm cursor-pointer shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Submit Leave Application</span>
@@ -112,13 +112,13 @@ export const ManpowerLeaveDesk: React.FC<ManpowerLeaveDeskProps> = ({
 
       {/* Coverage Warning Banner */}
       {overlapRisksCount > 0 && (
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3.5">
-          <ShieldAlert className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
+        <div className="bg-amber-100/70 border border-amber-300/80 rounded-2xl p-4 flex items-start gap-3.5 shadow-2xs">
+          <ShieldAlert className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
           <div className="space-y-1 text-xs">
-            <h4 className="font-bold text-amber-900 text-sm">
+            <h4 className="font-bold text-amber-950 text-sm">
               Staffing Coverage Overlap Detected (Engineering Department)
             </h4>
-            <p className="text-amber-800 leading-relaxed">
+            <p className="text-amber-900/90 leading-relaxed">
               Marcus Vance and Chloe Tan both have overlapping annual leave pending between October 22 and October 26.
               Approving both requests will leave only 1 backend engineer on call during planned production release.
             </p>
@@ -127,18 +127,18 @@ export const ManpowerLeaveDesk: React.FC<ManpowerLeaveDeskProps> = ({
       )}
 
       {/* Leave Requests Management */}
-      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-        <div className="p-4 sm:p-5 border-b border-slate-200 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="bg-[#fffef9] rounded-2xl border border-amber-200/90 overflow-hidden shadow-2xs">
+        <div className="p-4 sm:p-5 border-b border-amber-200/70 bg-amber-50/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+            <h3 className="text-sm font-bold text-amber-950 uppercase tracking-wider">
               Leave Requests & Approval Queue
             </h3>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-amber-800/80">
               {pendingCount} applications awaiting executive operations review
             </p>
           </div>
 
-          <div className="flex items-center gap-1 p-1 bg-slate-200/60 rounded-lg text-xs font-medium">
+          <div className="flex items-center gap-1 p-1 bg-amber-100/70 rounded-lg text-xs font-medium">
             {[
               { id: 'pending', label: 'Pending Approval' },
               { id: 'approved', label: 'Approved' },
@@ -149,8 +149,8 @@ export const ManpowerLeaveDesk: React.FC<ManpowerLeaveDeskProps> = ({
                 onClick={() => setActiveFilter(tab.id as any)}
                 className={`px-3 py-1 rounded-md transition-colors cursor-pointer ${
                   activeFilter === tab.id
-                    ? 'bg-white text-slate-900 shadow-xs font-semibold'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-amber-400 text-amber-950 font-bold shadow-xs'
+                    : 'text-amber-900 hover:text-amber-950'
                 }`}
               >
                 {tab.label}

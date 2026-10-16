@@ -120,13 +120,13 @@ export const ARTracker: React.FC<ARTrackerProps> = ({
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Whiteboard Focus 2: Monitor AR Payment Status
           </div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-amber-950">
             Accounts Receivable & Cashflow Aging
           </h2>
-          <p className="text-sm text-slate-600 mt-0.5">
+          <p className="text-sm text-amber-900/80 mt-0.5">
             Real-time debtor aging analysis, automated follow-up scheduling, and payment reconciliations.
           </p>
         </div>
@@ -134,51 +134,51 @@ export const ARTracker: React.FC<ARTrackerProps> = ({
 
       {/* AR Aging Waterfall Strip */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Total Outstanding AR
           </div>
-          <div className="text-2xl font-bold font-mono tabular-nums text-slate-900">
+          <div className="text-2xl font-bold font-mono tabular-nums text-amber-950">
             ${totalOutstanding.toLocaleString()}
           </div>
-          <div className="text-xs text-slate-500 mt-1">
+          <div className="text-xs text-amber-800/80 mt-1">
             Across {records.filter((r) => r.status !== 'collected').length} active debtor accounts
           </div>
         </div>
 
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             Current (&lt;30d)
           </div>
-          <div className="text-2xl font-bold font-mono tabular-nums text-slate-900">
+          <div className="text-2xl font-bold font-mono tabular-nums text-amber-950">
             ${currentBucketTotal.toLocaleString()}
           </div>
-          <div className="text-xs text-slate-500 mt-1">Within standard credit terms</div>
+          <div className="text-xs text-amber-800/80 mt-1">Within standard credit terms</div>
         </div>
 
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-amber-700 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
             1 - 30 Days Overdue
           </div>
-          <div className="text-2xl font-bold font-mono tabular-nums text-amber-700">
+          <div className="text-2xl font-bold font-mono tabular-nums text-amber-800">
             ${bucket1To30Total.toLocaleString()}
           </div>
-          <div className="text-xs text-slate-500 mt-1">First reminder window</div>
+          <div className="text-xs text-amber-800/80 mt-1">First reminder window</div>
         </div>
 
-        <div className="p-4 bg-white rounded-xl border border-slate-200">
-          <div className="text-xs font-semibold uppercase tracking-wider text-rose-700 mb-1">
+        <div className="p-4 bg-[#fffef9] rounded-xl border border-amber-200/90 shadow-2xs">
+          <div className="text-xs font-bold uppercase tracking-wider text-rose-800 mb-1">
             31 - 60+ Days Overdue
           </div>
           <div className="text-2xl font-bold font-mono tabular-nums text-rose-700">
             ${bucket31To60Total.toLocaleString()}
           </div>
-          <div className="text-xs text-slate-500 mt-1">High collections priority</div>
+          <div className="text-xs text-amber-800/80 mt-1">High collections priority</div>
         </div>
       </div>
 
       {/* Aging Filters */}
-      <div className="flex items-center gap-1 p-1 bg-slate-100 rounded-lg w-fit text-xs font-medium">
+      <div className="flex items-center gap-1 p-1 bg-amber-100/70 rounded-lg w-fit text-xs font-medium">
         {[
           { id: 'all', label: 'All Accounts' },
           { id: 'current', label: 'Current Terms' },
@@ -190,8 +190,8 @@ export const ARTracker: React.FC<ARTrackerProps> = ({
             onClick={() => setActiveAgingFilter(tab.id as any)}
             className={`px-3 py-1.5 rounded-md transition-colors cursor-pointer ${
               activeAgingFilter === tab.id
-                ? 'bg-white text-slate-900 shadow-xs font-semibold'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-amber-400 text-amber-950 font-bold shadow-xs'
+                : 'text-amber-900 hover:text-amber-950'
             }`}
           >
             {tab.label}
@@ -200,7 +200,7 @@ export const ARTracker: React.FC<ARTrackerProps> = ({
       </div>
 
       {/* AR Records Table */}
-      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+      <div className="bg-[#fffef9] rounded-xl border border-amber-200/90 overflow-hidden shadow-2xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
